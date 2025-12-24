@@ -1,9 +1,21 @@
 package com.sistemadevenda.sistema.service;
 
+
+import com.sistemadevenda.sistema.model.Product;
+import com.sistemadevenda.sistema.repository.ProductRepository;
+import org.springframework.stereotype.Service;
+
+@Service
 public class ProductService {
 
-    public ProductService(){
-        this.
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
+
+    public Product createProduct(Product product){
+        return productRepository.save(product);
     }
 
 }
